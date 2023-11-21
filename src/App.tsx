@@ -1,9 +1,10 @@
-import React from 'react';
-
+import "./globals.css";
 const App = () => {
   return (
     <>
-      HELLO
+      <h1 className="text-5xl italic underline font-bold">
+        HELLO hey whatsup
+        </h1>
     </>
   )
 }
