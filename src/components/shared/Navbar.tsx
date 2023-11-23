@@ -1,19 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between bg-slate-900">
-      <div className="flex">
-        <img
-          src=""
-          alt="profile photo"
-          className="rounded-full border-2 h-20 w-20"
-        />
+    <div className="flex h-20 flex-row gap-5 justify-between w-full">
+      <div className="flex w-2/6 mr-40">
+        <Avatar className="rounded-full border-2 h-20 w-20">
+          <AvatarImage src="/images/profile1.jpg" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
       </div>
-      <div className="flex justify-end">
-        <nav className="flex jusfity-center gap-3">
-          <Link to={""}>Home</Link>
+      <div>
+        <nav className="flex w-4/6 jusfity-end items-end gap-10 p-2 mr-28">
+          <Link to="/home">Home</Link>
           <Link to={""}>Project</Link>
           <Link to={""}>Contacts</Link>
         </nav>
