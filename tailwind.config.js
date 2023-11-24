@@ -50,10 +50,13 @@ export default {
         'light-4': '#5C5C7B',
         'cyan-400':'#00BCD4',
       },
-      screens: {
-        'xs': '480px',
-      
-      },
+    screens: {
+      xs: '320px',
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
       width: {
         '420': '420px',
         '465': '465px',
@@ -76,9 +79,10 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
-            backgroundImage: {
+      backgroundImage: {
         'bgimg': "url('/images/backgrd.jpg')",
-        'footer-texture': "url('/img/footer-texture.png')",
+        'wallp-1': "url('/images/wall1.jpg')",
+        'wallp-2': "url('/images/wall2.jpg')",
       }
     },
   },
