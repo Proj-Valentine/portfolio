@@ -13,22 +13,22 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 // import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 
-import { dashboardData, skillsData } from "./../../data/mydata";
+import { certificationNames, dashboardData, hobbiesData, iconsData, profileData, skillsData } from "./../../data/mydata";
 
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
 
-import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuTrigger,
-} from "@/components/ui/context-menu";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
+// import {
+//   ContextMenu,
+//   ContextMenuContent,
+//   ContextMenuItem,
+//   ContextMenuTrigger,
+// } from "@/components/ui/context-menu";
+// import {
+//   HoverCard,
+//   HoverCardContent,
+//   HoverCardTrigger,
+// } from "@/components/ui/hover-card";
 
 import {
   Tooltip,
@@ -82,10 +82,55 @@ const Home = () => {
         <Navbar />
       </div>
       <div className="flex items-center flex-col w-full mb-4 bg-wallp-2 px-20">
-        <div className="flex justify-center mb-20 text-center text-3xl w-auto h-5/6 mx-8 p-20 shadow-2xl backdrop-contrast-10 backdrop-blur-xl bg-white/30 ">
+        <div className="flex flex-col justify-center mb-20 text-center text-3xl w-auto h-5/6 mx-8 p-20 shadow-2xl backdrop-contrast-10 backdrop-blur-xl bg-white/30 ">
           <h1 className="brightness-200 text-4xl font-bold ">
-            WELCOME TO MY PORTFOLIO PAGE
+            VALENTINE'S PORTFOLIO PAGE
           </h1>
+          <br />
+          <div className="flex ml-2 mr-2 justify-center items-center brightness-125">
+            <img
+              src="/images/profile1.jpg"
+              className="h-40 w-40 rounded-full shadow-2xl"
+            />
+          </div>
+          <h4 className="font-bold m-4">Powered By </h4>
+
+          <div className="flex justify-center w-full rounded-full">
+            {iconsData.progIcons.map((item, index) => (
+              <div
+                className="flex flex-row rounded-xl p-1 m-1 brightness-90"
+                key={index}
+              >
+                <img
+                  src={item}
+                  width={30}
+                  height={30}
+                  className="brightness-150 bg-dark-1 rounded-xl"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* {skillsData.map((category, index) => (
+            <div
+              className="flex flex-row bg-slate-900 rounded-xl p-1 m-1 "
+              key={index}
+            >
+              {category.category === "Programming" &&
+                category.icons.map((icon, skillIndex) => (
+                  <div key={skillIndex} className="p-1">
+                    <span key={skillIndex}>
+                      <img
+                        width={20}
+                        height={20}
+                        src={icon}
+                        alt={`Programming Icon ${skillIndex}`}
+                      />
+                    </span>
+                  </div>
+                ))}
+            </div>
+          ))} */}
         </div>
         <div className="mt-20 justify-center w-auto shadow-2xl backdrop-contrast-10 backdrop-blur-xl bg-white/30">
           <nav className="flex justify-center w-full jusfity-end gap-10 p-2 text-2xl font-bold">
@@ -96,55 +141,33 @@ const Home = () => {
         </div>
       </div>
       <div className="flex lg:flex-nowrap md:flex-nowrap sm:flex-wrap xs:flex-wrap justify-center items-center m-2 mt-4 w-full">
-        <div className="flex ml-2 mr-2 justify-center items-center brightness-125">
+        {/* <div className="flex ml-2 mr-2 justify-center items-center brightness-125">
           <img
             src="/images/profile1.jpg"
-            className="h-80 w-80 rounded-full shadow-2xl
-            "
-            // style={{width:'400px',height:'400px'}}
+            className="h-80 w-80 rounded-full shadow-2xl"
           />
-        </div>
+        </div> */}
+        {/* PROFILE SECTION */}
         <div className="flex m-4 flex-col justify-center items-center bg-wallp-1  rounded-3xl">
           <div className="bg-opacity-30 border m-10 border-white/40 backdrop-brightness-50 backdrop-contrast-50 backdrop-blur-xl bg-cyan-300 shadow-2xl rounded-3xl ">
-            <div className="">
+            <div className="flex flex-col">
               <section className="flex flex-col brightness-125 p-2 m-1">
                 <h2 className="flex text-xl font-bold justify-center items-center">
                   {" "}
                   Professional summary
                 </h2>
                 <div className="p-2 text-sm bg-slate-900 rounded-lg">
-                  <p>
-                    I am Valentine Kwame Ampah, a dedicated and passionate
-                    professional based in St. Johns, NL. With years of
-                    experience in modern data infrastructure, I excel in
-                    developing business strategies and maximizing efficiency.
-                  </p>
-                  <p>
-                    My expertise spans software development, data engineering,
-                    and automation, showcased through impactful projects. As a
-                    lifelong learner and team player, I thrive in collaborative
-                    environments.
-                  </p>
-                  <p>
-                    Certified in Google Data Analytics and IT Automation with
-                    Python, I hold an MSc. in Applied Psychological Science.
-                  </p>
-                  <p>
-                    Currently pursuing the Microsoft Azure Data Engineering
-                    Associate certification, AWS certified Developer, AWS
-                    Developer Associate.
-                  </p>
-                  <p>
-                    I bring a diverse skill set and a commitment to data-driven
-                    excellence.
-                  </p>
+                  {profileData.paragraphs.map((paragraph, index) => (
+                    <p key={index}> {paragraph}</p>
+                  ))}
                 </div>
               </section>
-              <section className="p-2 m-1">
-                <h2 className="flex text-xl font-bold justify-center items-center">
-                  SKILLS
-                </h2>
-                {/* <div className="flex flex-nowrap justify-center mr-4 items-center md:flex-wrap sm:flex-wrap drop-shadow-2xl p-2">
+              <section className="grid grid-cols-2 brightness-125 p-2 m-4 rounded-xl">
+                <div className="flex flex-col m-2">
+                  <h2 className="flex text-xl items-start font-bold justify-center">
+                    Certifications
+                  </h2>
+                  {/* <div className="flex flex-nowrap justify-center mr-4 items-center md:flex-wrap sm:flex-wrap drop-shadow-2xl p-2">
                   {skillsData.map((category, index) => (
                     <div
                       key={index}
@@ -161,28 +184,74 @@ const Home = () => {
                     </div>
                   ))}
                 </div> */}
+                  <div className="flex flex-col flex-nowrap  bg-slate-900 items-start mr-2 md:flex-wrap sm:flex-wrap p-2 rounded-xl">
+                    {certificationNames.paragraphs.map((paragraph, index) => (
+                      <div className="m-1 bg-slate-900 rounded-xl p-2">
+                        <p className="justify-items-start" key={index}>
+                          {paragraph}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col m-2">
+                  <h2 className="flex text-xl font-bold justify-center items-center">
+                    Skills {`(Hover to View)`}
+                  </h2>
+                  <div className="flex flex-col  bg-slate-900 flex-nowrap justify-center mr-4 items-start md:flex-wrap sm:flex-wrap p-2 rounded-xl">
+                    {skillsData.map((category, index) => (
+                      <div className="bg-slate-900 rounded-xl p-1 m-1">
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger className="bg-slate-900 mr-2 rounded-lg p-1">
+                              {category.category}
+                            </TooltipTrigger>
 
-                <div className="flex flex-nowrap justify-center mr-4 items-center md:flex-wrap sm:flex-wrap drop-shadow-2xl p-2">
-                  {skillsData.map((category, index) => (
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger className="bg-slate-900 mr-4 rounded-lg p-1 m-1">
-                          {category.category}
-                        </TooltipTrigger>
-
-                        <div key={index} className="m-4">
-                          <TooltipContent
-                            className="bg-slate-900 w-full"
-                            slot="bottom"
-                          >
-                            {category.items.map((skill, skillIndex) => (
-                              <p key={skillIndex}>{skill}</p>
-                            ))}
-                          </TooltipContent>
-                        </div>
-                      </Tooltip>
-                    </TooltipProvider>
-                  ))}
+                            <p key={index} className="">
+                              <TooltipContent className="bg-slate-900 w-full flex flex-row">
+                                {category.items.map((skill, skillIndex) => (
+                                  <div
+                                    key={skillIndex}
+                                    className="flex flex-col p-1"
+                                  >
+                                    <span key={skillIndex}>
+                                      <img
+                                        width={20}
+                                        height={20}
+                                        src={category.icons[skillIndex]}
+                                      />
+                                    </span>
+                                    <span key={skillIndex}> {skill}</span>
+                                  </div>
+                                ))}
+                                {/* <span>
+                                {category.icons.map((icon, iconIndex) => (
+                                  <img
+                                    key={iconIndex}
+                                    src={icon}
+                                    width={20}
+                                    height={20}
+                                  />
+                                ))}
+                              </span> */}
+                              </TooltipContent>
+                            </p>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div className="flex flex-col flex-nowrap mr-2 md:flex-wrap sm:flex-wrap p-2 rounded-xl">
+                  <div className="flex text-center justify-center">
+                    <h2 className="font-bold text-xl">Education</h2>
+                  </div>
+                  <div className="m-1 items-start bg-slate-900 rounded-xl p-2 w-full">
+                    <p>- Msc Applied Pyshological Science</p>
+                    <p>- Software Development Diploma</p>
+                  </div>
                 </div>
               </section>
             </div>
@@ -212,16 +281,19 @@ const Home = () => {
           </div>
         ))} */}
 
-        <ScrollArea className="w-4/5 whitespace-nowrap rounded-md border p-4  bg-white">
-          <div className="flex w-max space-x-4 p-4 whitespace-nowrap rounded-md border  bg-white">
+        <ScrollArea className="w-4/5 whitespace-nowrap rounded-md border p-4">
+          <div className="flex w-max space-x-4 p-2 whitespace-nowrap rounded-md border  bg-white">
             {dashboardData.map((item: dashboard, index: number) => (
-              <figure key={index} className="shrink-0  bg-slate-900 p-4 rounded-lg">
+              <figure
+                key={index}
+                className="shrink-0  bg-slate-900 p-2 rounded-lg"
+              >
                 <div className="overflow-hidden rounded-md">
                   <img
                     src={`${item.imageUrls.image1}`}
                     className="aspect-[3/4] h-96 w-fit object-cover"
-                    width={300}
-                    height={400}
+                    // width={400}
+                    // height={400}
                   />
                 </div>
                 <figcaption className="pt-2 text-lg text-muted-foreground">
@@ -233,27 +305,48 @@ const Home = () => {
               </figure>
             ))}
           </div>
-          <ScrollBar orientation="horizontal" />
+          <ScrollBar orientation="horizontal" color="black" />
         </ScrollArea>
       </div>
-      <div className="flex flex-row justify-around">
-        <div className="flex flex-col mt-10">
-          <h2 className="text-xl font-semibold">HOBBIES</h2>
-          <p>Gym</p>
-          <p>Soccer</p>
-          <p>Coding</p>
+      <div className="flex flex-row justify-center">
+        <div className="flex flex-col mt-10 justify-center items-center">
+          <h2 className="text-xl font-semibold items-center mb-4">HOBBIES</h2>
+          <div className="flex flex-row">
+            {hobbiesData.map((hobby, index) => (
+              <div className="flex flex-row justify-between p-4 m-2 bg-white rounded-md">
+                <img
+                  key={index}
+                  src={hobby.icon}
+                  width={80}
+                  height={80}
+                  className="bg-white"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex flex-col justify-center mb-4 mt-4">
-        <div className="flex justify-center  mb-2">
-          <p>Do you want to connect for work or collaboration? </p>
-          <p>You can send me an email</p>
+        <div className="flex flex-col justify-center text-center bg-slate-900  mb-10">
+          <section>
+            <p>
+              If you're interested in connecting for professional opportunities
+              or collaboration, please feel free to reach out.
+            </p>
+            <p>I am open to exploring new ventures and partnerships.</p>
+            <p>
+              You can send me an email at{" "}
+              <a href="mailto:vkampah28@example.com">vkampah28@gmail.com</a>,
+              and I'll get back to you as soon as possible.
+            </p>
+          </section>
         </div>
         <div className="flex flex-row justify-center">
           <Button type="button" className="shad-button_primary px-8 m-1">
-            <Mail className="mr-2 h-4 w-4" /> Send me an email
+            <Mail className="mr-2 h-4 w-4" />{" "}
+            <a href="mailto:vkampah28@example.com">Send me an email</a>
           </Button>
-          <Button type="button" className="shad-button_primary px-8 m-1">
+          {/* <Button type="button" className="shad-button_primary px-8 m-1">
             <ContextMenu>
               <ContextMenuTrigger>
                 Right click to show emails
@@ -265,7 +358,7 @@ const Home = () => {
                 <ContextMenuItem>valentine.ampah@keyin.com</ContextMenuItem>
               </ContextMenuContent>
             </ContextMenu>
-          </Button>
+          </Button> */}
         </div>
       </div>
       <div className="flex flex-col items-center justify-center">
