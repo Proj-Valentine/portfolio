@@ -63,26 +63,22 @@ export const skillsData: SkillCategory[] = [
 
   },
   {
-    category: 'Programming',
-    items: ['Python', 'JavaScript', 'TypeScript'],
+    category: 'Programming/ Scripting',
+    items: ['Python', 'JavaScript', 'TypeScript','Bash', 'Linux', 'PowerShell','unix'],
         icons:['assets/python.svg','assets/javascript.svg','assets/typescript.svg']
 
   },
   {
     category: 'Data Engineering',
     items: ['Azure Databricks', 'Apache Airflow', 'Azure ADF'],
-        icons:['','assets/airflow.svg','']
+        icons:['assets/azure3.svg','assets/airflow.svg','']
 
   },
-  {
-    category: 'Scripting',
-    items: ['Bash', 'Linux', 'PowerShell','unix'],
-        icons:['','','']
-  },
+
     {
     category: 'Perfomance Measurement',
     items: ['Logic Models', 'Survey', 'Evaluation Framework'],
-        icons:['','','']
+        icons:[]
   },
 ];
 
@@ -93,9 +89,7 @@ type ProfileContent = {
 
 export const profileData: ProfileContent = {
   paragraphs: [
-    "I am Valentine Kwame Ampah, a dedicated and passionate professional based in St. Johns, NL. With years of experience in modern data infrastructure, I excel in developing business strategies and maximizing efficiency. My expertise spans software development, data engineering, and automation, showcased through impactful projects. As a lifelong learner and team player, I thrive in collaborative environments.",
-    "Certified in Google Data Analytics and IT Automation with Python, I hold an MSc. in Applied Psychological Science and a Sofftware Development Diploma.",
-    "I bring a diverse skill set and a commitment to data-driven excellence.",
+    "I am Valentine Kwame Ampah, a dedicated and passionate professional based in St. Johns, NL. With years of experience in modern data infrastructure, I excel in developing business strategies and maximizing efficiency. My expertise spans software development, data engineering, and automation, showcased through impactful projects. As a lifelong learner and team player, I thrive in collaborative environments. I bring a diverse skill set and a commitment to data-driven excellence to drive growth and maximize productivity.",
   ],
 };
 
@@ -143,7 +137,7 @@ progIcons:string[];
 }
 export const iconsData: iconTypes = {
   progIcons:
-  ['assets/python.svg','assets/javascript.svg',
+  ['assets/javascript.svg',
 'assets/typescript.svg','assets/schadcn.svg',
 'assets/vite.svg','assets/reactic.svg','assets/nodejs.svg']
 }

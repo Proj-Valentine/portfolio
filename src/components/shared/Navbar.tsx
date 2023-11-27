@@ -8,12 +8,12 @@ const Navbar = () => {
     <div className="flex h-20 flex-row gap-5 justify-between w-full">
       <div className="flex w-2/6 mr-40">
         <Avatar className="rounded-full border-2 h-20 w-20">
-          <AvatarImage src="/images/profile1.jpg" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src="/assets/profile-placeholder.svg" />
+          <AvatarFallback>VA</AvatarFallback>
         </Avatar>
       </div>
       <div>
-        <nav className="flex w-4/6 jusfity-end items-end gap-10 p-2 mr-28">
+        <nav className="flex w-4/6 jusfity-end items-end gap-10 p-2 mr-10">
           <Link to="/home">Home</Link>
           <Link to={""}>Project</Link>
           <Link to={""}>Contacts</Link>
@@ -24,4 +24,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

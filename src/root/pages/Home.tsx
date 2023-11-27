@@ -5,7 +5,7 @@
 import Navbar from './../../components/shared/Navbar';
 import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+// import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 
 
@@ -30,12 +30,16 @@ import { Mail } from 'lucide-react';
 //   HoverCardTrigger,
 // } from "@/components/ui/hover-card";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipProvider,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip";
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+
 
 type dashboard = {
   name: string;
@@ -82,17 +86,11 @@ const Home = () => {
         <Navbar />
       </div>
       <div className="flex items-center flex-col w-full mb-4 bg-wallp-2 px-20">
-        <div className="flex flex-col justify-center mb-20 text-center text-3xl w-auto h-5/6 mx-8 p-20 shadow-2xl backdrop-contrast-10 backdrop-blur-xl bg-white/30 ">
-          <h1 className="brightness-200 text-4xl font-bold ">
+        <div className="flex flex-col justify-center mb-20 text-center text-3xl w-auto h-5/6 mx-8 p-20 shadow-md backdrop-contrast-10 backdrop-blur-xl bg-white/30 ">
+          <h1 className="brightness-200 text-4xl font-bold">
             VALENTINE'S PORTFOLIO PAGE
           </h1>
           <br />
-          <div className="flex ml-2 mr-2 justify-center items-center brightness-125">
-            <img
-              src="/images/profile1.jpg"
-              className="h-40 w-40 rounded-full shadow-2xl"
-            />
-          </div>
           <h4 className="font-bold m-4">Powered By </h4>
 
           <div className="flex justify-center w-full rounded-full">
@@ -105,7 +103,7 @@ const Home = () => {
                   src={item}
                   width={30}
                   height={30}
-                  className="brightness-150 bg-dark-1 rounded-xl"
+                  className="brightness-90 rounded-xl bg-white"
                 />
               </div>
             ))}
@@ -132,7 +130,7 @@ const Home = () => {
             </div>
           ))} */}
         </div>
-        <div className="mt-20 justify-center w-auto shadow-2xl backdrop-contrast-10 backdrop-blur-xl bg-white/30">
+        <div className="mt-20 justify-center w-auto shadow-md backdrop-contrast-10 backdrop-blur-xl bg-white/30">
           <nav className="flex justify-center w-full jusfity-end gap-10 p-2 text-2xl font-bold">
             <Link to="/home">Home</Link>
             <Link to={"/dashboard"}>Projects</Link>
@@ -140,130 +138,164 @@ const Home = () => {
           </nav>
         </div>
       </div>
-      <div className="flex lg:flex-nowrap md:flex-nowrap sm:flex-wrap xs:flex-wrap justify-center items-center m-2 mt-4 w-full">
-        {/* <div className="flex ml-2 mr-2 justify-center items-center brightness-125">
-          <img
-            src="/images/profile1.jpg"
-            className="h-80 w-80 rounded-full shadow-2xl"
-          />
-        </div> */}
-        {/* PROFILE SECTION */}
-        <div className="flex m-4 flex-col justify-center items-center bg-wallp-1  rounded-3xl">
-          <div className="bg-opacity-30 border m-10 border-white/40 backdrop-brightness-50 backdrop-contrast-50 backdrop-blur-xl bg-cyan-300 shadow-2xl rounded-3xl ">
-            <div className="flex flex-col">
+      <div className="flex md:flex-nowrap xs:flex-wrap justify-center items-center m-4 xs:m-2 mt-4 w-full shadow-md">
+        <div className="flex flex-col md:basis-1/3 content-start m-2 xs:basis-1/2 ml-2 mr-2 justify-center items-center brightness-125 rounded-md shadow-md">
+          <div className=" flex justify-center w-full items-center">
+            <img
+              src="/images/profile1.jpg"
+              className="w-max rounded-full sm:rounded-lg xs:rounded-lg sm:w-96 xs:w-full shadow-md"
+            />
+          </div>
+          <section className="rounded-md">
+            <div className="flex flex-col flex-nowrap mr-2 md:flex-wrap sm:flex-wrap p-2 rounded-xl">
+              <div className="flex text-center justify-center">
+                <h2 className="font-bold text-xl">Education</h2>
+              </div>
+              <div className="m-1 items-start rounded-xl p-1 w-full">
+                <p>- Msc Applied Pyshological Science</p>
+                <p>- Software Development Diploma</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* PROFILE SECTION   */}
+        <div className="flex flex-col xs:w-auto border md:basis-2/3 xs:basis-1/2 m-2 justify-center items-center rounded-3xl w-full">
+          <div className="md:p-1 shadow-md rounded-3xl w-full">
+            <div className="flex flex-col xs:pl-1">
               <section className="flex flex-col brightness-125 p-2 m-1">
                 <h2 className="flex text-xl font-bold justify-center items-center">
-                  {" "}
                   Professional summary
                 </h2>
-                <div className="p-2 text-sm bg-slate-900 rounded-lg">
+                <div className="p-2 flex justify-center w-full text-start text-sm rounded-lg">
                   {profileData.paragraphs.map((paragraph, index) => (
                     <p key={index}> {paragraph}</p>
                   ))}
                 </div>
               </section>
-              <section className="grid grid-cols-2 brightness-125 p-2 m-4 rounded-xl">
-                <div className="flex flex-col m-2">
+
+              <section className="grid grid-cols-2 xs:flex xs:flex-col brightness-125 p-2 m-4 rounded-xl">
+                <div className="flex flex-col xs:m-0 m-2">
                   <h2 className="flex text-xl items-start font-bold justify-center">
                     Certifications
                   </h2>
-                  {/* <div className="flex flex-nowrap justify-center mr-4 items-center md:flex-wrap sm:flex-wrap drop-shadow-2xl p-2">
-                  {skillsData.map((category, index) => (
-                    <div
-                      key={index}
-                      className="bg-slate-900 mr-4 rounded-lg p-1"
-                    >
-                      <HoverCard>
-                        <HoverCardTrigger>{category.category}</HoverCardTrigger>
-                        <HoverCardContent className="bg-slate-900">
-                          {category.items.map((skill, skillIndex) => (
-                            <p key={skillIndex}>{skill}</p>
-                          ))}
-                        </HoverCardContent>
-                      </HoverCard>
-                    </div>
-                  ))}
-                </div> */}
-                  <div className="flex flex-col flex-nowrap  bg-slate-900 items-start mr-2 md:flex-wrap sm:flex-wrap p-2 rounded-xl">
+
+                  <div className="flex flex-col flex-nowrap items-start mr-2 md:flex-wrap sm:flex-wrap p-2 xs:p-1 rounded-xl">
                     {certificationNames.paragraphs.map((paragraph, index) => (
-                      <div className="m-1 bg-slate-900 rounded-xl p-2">
+                      <div className="rounded-xl p-1">
                         <p className="justify-items-start" key={index}>
-                          {paragraph}
+                          {`- ${paragraph}`}
                         </p>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="flex flex-col m-2">
-                  <h2 className="flex text-xl font-bold justify-center items-center">
-                    Skills {`(Hover to View)`}
-                  </h2>
-                  <div className="flex flex-col  bg-slate-900 flex-nowrap justify-center mr-4 items-start md:flex-wrap sm:flex-wrap p-2 rounded-xl">
-                    {skillsData.map((category, index) => (
-                      <div className="bg-slate-900 rounded-xl p-1 m-1">
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger className="bg-slate-900 mr-2 rounded-lg p-1">
-                              {category.category}
-                            </TooltipTrigger>
-
-                            <p key={index} className="">
-                              <TooltipContent className="bg-slate-900 w-full flex flex-row">
-                                {category.items.map((skill, skillIndex) => (
-                                  <div
-                                    key={skillIndex}
-                                    className="flex flex-col p-1"
-                                  >
-                                    <span key={skillIndex}>
-                                      <img
-                                        width={20}
-                                        height={20}
-                                        src={category.icons[skillIndex]}
-                                      />
-                                    </span>
-                                    <span key={skillIndex}> {skill}</span>
-                                  </div>
-                                ))}
-                                {/* <span>
-                                {category.icons.map((icon, iconIndex) => (
-                                  <img
-                                    key={iconIndex}
-                                    src={icon}
-                                    width={20}
-                                    height={20}
-                                  />
-                                ))}
-                              </span> */}
-                              </TooltipContent>
-                            </p>
-                          </Tooltip>
-                        </TooltipProvider>
+              </section>
+              {/* EDUCATION */}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* SKILLS */}
+      <div className="flex flex-col xs:mx-4 justify-center items-center shadow-md mt-4 m-20">
+        <h2 className="flex text-xl font-bold justify-center items-center">
+          Skills {`(Click Tab to view)`}
+        </h2>
+        <br />
+        <div className="flex flex-col flex-nowrap justify-center items-start md:flex-wrap sm:flex-wrap p-1 rounded-xl mx-40">
+          <Tabs defaultValue="Cloud Computing" className="w-auto mx-1">
+            <div className="">
+              <TabsList className="">
+                {skillsData.map((item, index) => (
+                  <TabsTrigger key={index} value={item.category}>
+                    <div className=" item-start p-1">
+                      {item.category.split(/\s+/)[0]} <br />
+                      {item.category.split(/\s+/)[1]}
+                    </div>
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+            {skillsData.map((item, index) => (
+              <TabsContent key={index} value={item.category}>
+                <div className="flex flex-row gap-2 justify-center w-2/4 items-center mr-20 ml-20  bg-indigo-600 p-2 rounded-md">
+                  <div className="flex flex-col gap-2">
+                    {item.items.map((skill, index) => (
+                      <div key={index} className="flex">
+                        {skill}
+                      </div>
+                    ))}{" "}
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    {item.icons.map((icon, index) => (
+                      <div key={index} className="flex flex-row rounded-md bg-white">
+                        <img src={icon} width={25} height={25} />
                       </div>
                     ))}
                   </div>
                 </div>
-              </section>
-              <section>
-                <div className="flex flex-col flex-nowrap mr-2 md:flex-wrap sm:flex-wrap p-2 rounded-xl">
-                  <div className="flex text-center justify-center">
-                    <h2 className="font-bold text-xl">Education</h2>
-                  </div>
-                  <div className="m-1 items-start bg-slate-900 rounded-xl p-2 w-full">
-                    <p>- Msc Applied Pyshological Science</p>
-                    <p>- Software Development Diploma</p>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
       </div>
       <div className="flex m-4 item-center justify-center">
         <h1 className="text-3xl font-bold">PROJECTS</h1>
       </div>
-      <div className="flex flex-row basis-1/2 flex-wrap md:flex-nowrap justify-evenly h-auto items-center w-full m-4 mb-20">
-        {/* {dashboardData.map((item: dashboard, index: number) => (
-          <div key={index} className=" flex flex-col rounded shadow-2xl">
+      <div className="shadow-md">
+        <div className=" flex justify-center items-center">
+          <Tabs defaultValue="Dashboard Application" className="">
+            <TabsList className="flex w-full items-center justify-center p-4">
+              {dashboardData.map((item: dashboard, index: number) => (
+                <div className=" border-x flex justify-center items-center">
+                  <TabsTrigger
+                    value={item.name}
+                    key={index}
+                    className=" mr-1  flex-justify-center items-center"
+                  >
+                    {item.name}
+                  </TabsTrigger>
+                </div>
+              ))}
+            </TabsList>
+            {dashboardData.map((item: dashboard, index: number) => (
+              <div className=" m-1 flex justify-center items-center bg-blue w-full">
+                <TabsContent
+                  className="flex items-center justify-center"
+                  value={item.name}
+                >
+                  <div className="flex justify-center items-center ml-10">
+                    <figure key={index} className=" ml-10 p-2 rounded-lg w-4/4">
+                      <div className=" flex flex-col overflow-hidden w-3/4 items-center whitespace-nowrap rounded-md shadow-md p-2">
+                        <div className="bg-white p-1">
+                          <img
+                            src={`${item.imageUrls.image1}`}
+                            // className="aspect-[3/4] h-96 w-fit object-cover"
+                            className="w-full aspect-square rounded-md"
+                            // width={400}
+                            // height={400}
+                          />
+                        </div>
+                        <div>
+                          <figcaption className="pt-2 text-lg text-muted-foreground m-1">
+                            <p>{item.name}</p>
+                            <span className="font-semibold text-foreground">
+                              <p>Description: {item.description}</p>
+                            </span>
+                          </figcaption>
+                        </div>
+                      </div>
+                    </figure>
+                  </div>
+                </TabsContent>
+              </div>
+            ))}
+          </Tabs>
+        </div>
+      </div>
+      {/* <div className="flex flex-row basis-1/2 flex-wrap md:flex-nowrap justify-evenly h-auto items-center w-full m-4 mb-20">
+        {dashboardData.map((item: dashboard, index: number) => (
+          <div key={index} className=" flex flex-col rounded shadow-md">
             <div className="flex flex-row justify-evenly w-96 rounded-lg bg-white mr-2">
               <img
                 src={`${item.imageUrls.image1}`}
@@ -279,7 +311,7 @@ const Home = () => {
               <p>Description: {item.description}</p>
             </div>
           </div>
-        ))} */}
+        ))}
 
         <ScrollArea className="w-4/5 whitespace-nowrap rounded-md border p-4">
           <div className="flex w-max space-x-4 p-2 whitespace-nowrap rounded-md border  bg-white">
@@ -307,7 +339,7 @@ const Home = () => {
           </div>
           <ScrollBar orientation="horizontal" color="black" />
         </ScrollArea>
-      </div>
+      </div> */}
       <div className="flex flex-row justify-center">
         <div className="flex flex-col mt-10 justify-center items-center">
           <h2 className="text-xl font-semibold items-center mb-4">HOBBIES</h2>
@@ -327,7 +359,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex flex-col justify-center mb-4 mt-4">
-        <div className="flex flex-col justify-center text-center bg-slate-900  mb-10">
+        <div className="flex flex-col justify-center text-center shadow-md p-2 mb-10">
           <section>
             <p>
               If you're interested in connecting for professional opportunities
@@ -385,12 +417,10 @@ const Home = () => {
           </p>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <p className="bg-slate-900 px-8 m-1 shadow-xl rounded-md">
+          <p className="px-8 m-1 shadow-md rounded-md">
             @ 2023 Mr Valentine Ampah
           </p>
-          <p className="bg-slate-900 px-8 m-1 shadow-xl rounded-md">
-            {getTodaysDate()}
-          </p>
+          <p className="px-8 m-1 shadow-md rounded-md">{getTodaysDate()}</p>
         </div>
       </div>
     </div>
