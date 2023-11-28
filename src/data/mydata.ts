@@ -64,14 +64,14 @@ export const skillsData: SkillCategory[] = [
   },
   {
     category: 'Programming/ Scripting',
-    items: ['Python', 'JavaScript', 'TypeScript','Bash', 'Linux', 'PowerShell','unix'],
-        icons:['assets/python.svg','assets/javascript.svg','assets/typescript.svg']
+    items: ['Python', 'JavaScript', 'TypeScript','Bash', 'Linux', 'PowerShell'],
+        icons:['assets/python.svg','assets/javascript.svg','assets/typescript.svg','assets/bash.svg', 'assets/linux.svg','assets/powershell.svg']
 
   },
   {
     category: 'Data Engineering',
     items: ['Azure Databricks', 'Apache Airflow', 'Azure ADF'],
-        icons:['assets/azure3.svg','assets/airflow.svg','']
+        icons:['assets/Databricks.svg','assets/airflow.svg','assets/ADF.svg']
 
   },
 
