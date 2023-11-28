@@ -85,7 +85,7 @@ const Home = () => {
       <div className="w-full z-50 relative">
         <Navbar />
       </div>
-      <div className="flex items-center flex-col w-full mb-4  bg-wallp-1 px-20">
+      <div className="flex items-center flex-col w-full mb-4  bg-wallp-2 px-20">
         {/*  backdrop-contrast-10 backdrop-blur-xl bg-white/30 */}
         <div className="flex flex-col justify-center mb-20 text-center text-3xl w-auto h-5/6 mx-8 p-20 shadow-2xl bg-indigo-950 mt-2 backdrop-contrast-10 backdrop-blur-xl ">
           <h1 className="brightness-200 text-4xl font-bold">
@@ -252,11 +252,11 @@ const Home = () => {
           <Tabs defaultValue="Dashboard Application" className="">
             <TabsList className="flex w-full items-center justify-center p-4">
               {dashboardData.map((item: dashboard, index: number) => (
-                <div className=" border-x flex justify-center items-center">
+                <div className="flex justify-center items-center">
                   <TabsTrigger
                     value={item.name}
                     key={index}
-                    className=" mr-1  flex-justify-center items-center"
+                    className=" mr-1 flex-justify-center items-center"
                   >
                     {item.name}
                   </TabsTrigger>

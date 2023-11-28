@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <div className="flex h-20 flex-row gap-5 justify-between w-full">
       <div className="flex w-2/6 mr-40">
-        <Avatar className="rounded-full border-2 h-20 w-20">
-          <AvatarImage src="/assets/profile-placeholder.svg" />
+        <Avatar className="rounded-full h-20 w-20">
+          <AvatarImage src="/assets/reactic.svg" />
           <AvatarFallback>VA</AvatarFallback>
         </Avatar>
       </div>

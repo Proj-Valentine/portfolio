@@ -84,6 +84,7 @@ export default {
         'bgimg': "url('/images/backgrd.jpg')",
         'wallp-1': "url('/images/wall1.jpg')",
         'wallp-2': "url('/images/wall2.jpg')",
+        'bg2':"url('/images/great.jpg')",
       }
     },
   },
