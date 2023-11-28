@@ -49,6 +49,7 @@ export default {
         'light-3': '#7878A3',
         'light-4': '#5C5C7B',
         'cyan-400':'#00BCD4',
+        'bg-blue':'#00306E',
       },
     screens: {
       xs: '320px',

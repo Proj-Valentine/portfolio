@@ -102,7 +102,7 @@ export const certificationNames: Certificates = {
   "Google Data Analytics",
   "Google IT Automation with Python",
   "Microsoft Azure Data Engineering Associate (Pending)",
-  "AWS Certified Developer - Associate",
+  "AWS Certified Cloud Practitioner",
   "AWS Developer Associate",
   // Add more certification names as needed
 ]}

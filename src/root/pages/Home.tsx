@@ -82,11 +82,12 @@ const Home = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu> */}
-      <div className="w-full">
+      <div className="w-full z-50 relative">
         <Navbar />
       </div>
-      <div className="flex items-center flex-col w-full mb-4 bg-wallp-2 px-20">
-        <div className="flex flex-col justify-center mb-20 text-center text-3xl w-auto h-5/6 mx-8 p-20 shadow-md backdrop-contrast-10 backdrop-blur-xl bg-white/30 ">
+      <div className="flex items-center flex-col w-full mb-4  bg-wallp-1 px-20">
+        {/*  backdrop-contrast-10 backdrop-blur-xl bg-white/30 */}
+        <div className="flex flex-col justify-center mb-20 text-center text-3xl w-auto h-5/6 mx-8 p-20 shadow-2xl bg-indigo-950 mt-2 backdrop-contrast-10 backdrop-blur-xl ">
           <h1 className="brightness-200 text-4xl font-bold">
             VALENTINE'S PORTFOLIO PAGE
           </h1>
@@ -130,7 +131,8 @@ const Home = () => {
             </div>
           ))} */}
         </div>
-        <div className="mt-20 justify-center w-auto shadow-md backdrop-contrast-10 backdrop-blur-xl bg-white/30">
+        {/* backdrop-contrast-10 backdrop-blur-xl bg-white/30 */}
+        <div className="mt-20 justify-center w-auto shadow-2xl bg-indigo-950 mb-1 backdrop-contrast-50 backdrop-blur-xl">
           <nav className="flex justify-center w-full jusfity-end gap-10 p-2 text-2xl font-bold">
             <Link to="/home">Home</Link>
             <Link to={"/dashboard"}>Projects</Link>
@@ -228,7 +230,10 @@ const Home = () => {
                   </div>
                   <div className="flex flex-col gap-2">
                     {item.icons.map((icon, index) => (
-                      <div key={index} className="flex flex-row rounded-md bg-white">
+                      <div
+                        key={index}
+                        className="flex flex-row rounded-md bg-white"
+                      >
                         <img src={icon} width={25} height={25} />
                       </div>
                     ))}
@@ -267,7 +272,7 @@ const Home = () => {
                   <div className="flex justify-center items-center ml-10">
                     <figure key={index} className=" ml-10 p-2 rounded-lg w-4/4">
                       <div className=" flex flex-col overflow-hidden w-3/4 items-center whitespace-nowrap rounded-md shadow-md p-2">
-                        <div className="bg-white p-1">
+                        <div className="bg-white p-2 ">
                           <img
                             src={`${item.imageUrls.image1}`}
                             // className="aspect-[3/4] h-96 w-fit object-cover"
