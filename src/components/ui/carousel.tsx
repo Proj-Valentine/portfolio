@@ -7,26 +7,43 @@ import * as React from "react"
 //   type EmblaPluginType as CarouselPlugin,
 // } from "embla-carousel-react"
 
-import useEmblaCarousel from "embla-carousel-react";
-import {
-  type EmblaCarouselType as CarouselApi,
-  type EmblaOptionsType as CarouselOptions,
-  type EmblaPluginType as CarouselPlugin,
-} from "embla-carousel";
+// import useEmblaCarousel from "embla-carousel-react";
+// import {
+//   type EmblaCarouselType as CarouselApi,
+//   type EmblaOptionsType as CarouselOptions,
+//   type EmblaPluginType as CarouselPlugin,
+// } from "embla-carousel";
 
 //  import { UseEmblaCarouselType as CarouselApi } from "embla-carousel-react";
+
+import useEmblaCarousel, {
+  type UseEmblaCarouselType,
+} from "embla-carousel-react";
+
+type CarouselApi = UseEmblaCarouselType[1];
+type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
+type CarouselOptions = UseCarouselParameters[0];
+type CarouselPlugin = UseCarouselParameters[1];
+
+type CarouselProps = {
+  opts?: CarouselOptions;
+  plugins?: CarouselPlugin;
+  orientation?: "horizontal" | "vertical";
+  setApi?: (api: CarouselApi) => void;
+};
+
 
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-type CarouselProps = {
-  opts?: CarouselOptions
-  plugins?: CarouselPlugin[]
-  orientation?: "horizontal" | "vertical"
-  setApi?: (api: CarouselApi) => void
-}
+// type CarouselProps = {
+//   opts?: CarouselOptions
+//   plugins?: CarouselPlugin[]
+//   orientation?: "horizontal" | "vertical"
+//   setApi?: (api: CarouselApi) => void
+// }
 
 type CarouselContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0]
