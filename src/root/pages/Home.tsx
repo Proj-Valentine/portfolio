@@ -1,7 +1,4 @@
 
-// import { Button } from "@/components/ui/button";
-// import { Menubar } from "@/components/ui/menubar";
-// import { NavigationMenu, NavigationMenuContent, NavigationMenuIndicator, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport,} from "@/components/ui/navigation-menu";
 import Navbar from './../../components/shared/Navbar';
 // import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
@@ -61,18 +58,18 @@ const Home = () => {
       <div className="w-full z-50 relative">
         <Navbar />
       </div>
-      <div className="flex items-center flex-col w-full mb-4  bg-wallp-2 px-20">
-        <div className="flex flex-col justify-center mb-20 text-center text-3xl w-full h-5/6 mx-8 p-20 shadow-2xl mt-2 backdrop-contrast-10 backdrop-blur-xl ">
+      <div className="flex items-center flex-col w-full mb-4 bg-bg3 px-20">
+        <div className="flex flex-col  justify-center mb-20 text-center text-3xl w-full h-5/6 mx-8 p-20 mt-2 ">
           <br />
-          <Card>
-            <CardContent className="bg-bg3 w-full h-40 sm:h-80">
-              {/* <p>Card Content</p> */}
+          {/* <Card>
+            <CardContent className=" w-40 md:w-full h-40 md:h-80">
+              <img
+                src={"/images/profile1.jpg"}
+                className="h-40 w-40 md:w-full rounded-md"
+              ></img>
             </CardContent>
-          </Card>
-
-
+          </Card> */}
         </div>
-
       </div>
       <div className="flex flex-col md:flex-nowrap xs:flex-wrap justify-center items-center m-4 xs:m-2 mt-4 w-full shadow-md">
         <div className="flex flex-col md:basis-1/3 content-start m-2 xs:basis-1/2 ml-2 mr-2 justify-center items-center brightness-125 rounded-md shadow-md"></div>
@@ -81,10 +78,12 @@ const Home = () => {
         <div className="flex flex-col xs:w-auto md:basis-2/3 xs:basis-1/2 m-2 justify-center items-center rounded-3xl w-full">
           <div className="md:p-1 shadow-md rounded-3xl w-full">
             <div className="flex flex-col md:flex-row justify-between md:grid-cols-2">
-              <section className="flex brightness-125 p-2 m-1 max-w-md">
+              <section className="hidden md:flex brightness-125 p-2 m-1 max-w-md">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Professional summary</CardTitle>
+                    <CardTitle className=" text-2xl md:text-3xl font-bold">
+                      Professional summary
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     {profileData.paragraphs.map((paragraph, index) => (
@@ -100,7 +99,9 @@ const Home = () => {
               <section className="brightness-125 p-2 m-4 rounded-xl max-w-md">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Certifications </CardTitle>
+                    <CardTitle className="text-2xl md:text-3xl font-bold">
+                      Certifications{" "}
+                    </CardTitle>
                   </CardHeader>
 
                   <CardContent>
@@ -120,19 +121,18 @@ const Home = () => {
         </div>
       </div>
       {/* SKILLS */}
-      <div className="flex flex-col xs:mx-4 justify-center items-center shadow-md mt-4 mb-2">
-        <h1 className="flex text-4xl font-bold justify-center items-center">
+      <div className="flex flex-col xs:mx-2 justify-center items-center shadow-md mt-4 mb-2">
+        <h1 className="flex text-2xl md:text-4xl font-bold justify-center items-center">
           Skills
         </h1>
         <br />
-        <div className="flex flex-col flex-nowrap justify-center items-start md:flex-wrap sm:flex-wrap p-1 rounded-xl mx-40">
-
+        <div className="flex flex-col justify-center items-start md:flex-wrap sm:flex-wrap p-1 rounded-xl mx-4 md:mx-40">
           <Carousel>
             <CarouselContent>
               {skillsData.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="flex flex-col justify-center items-center border-2 bg-black text-white"
+                  className="flex flex-col justify-center items-center border-2 bg-black text-white w-25 md:w-full"
                 >
                   <div className=" item-start p-1 mb-4">
                     {/* {item.category.split(/\s+/)[0]} <br />
@@ -168,11 +168,11 @@ const Home = () => {
           </Carousel>
         </div>
       </div>
-        
-        {/* PROJECTS */}
+
+      {/* PROJECTS */}
       <div className="shadow-md">
         <div className=" flex flex-col justify-center items-center p-10">
-          <h1 className="text-3xl font-bold mb-4">PROJECTS</h1>
+          <h1 className=" text-2xl md:text-3xl font-bold mb-4">PROJECTS</h1>
           <div>
             {projectsData.map((project, index) => (
               <Drawer key={index}>
@@ -262,7 +262,7 @@ const Home = () => {
 
       <div className="flex flex-row justify-center">
         <div className="flex flex-col mt-10 justify-center items-center">
-          <h2 className="text-xl font-semibold items-center mb-4">HOBBIES</h2>
+          <h2 className="text-3xl font-bold items-center mb-4">HOBBIES</h2>
           <div className="flex flex-row">
             {hobbiesData.map((hobby, index) => (
               <div className="flex flex-row justify-between p-4 m-2 rounded-md">
