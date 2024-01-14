@@ -152,7 +152,7 @@ interface Project {
 export const projectsData: Project[] = [
   {
     "id": "1",
-    "name": "MERN Next.js 14",
+    "name": "Next.js 14",
     "description": "A full-stack MERN event hosting application",
     "url": "https://streamfy.vercel.app/",
     "techStack": ["Node.js & Next.js 14", "TypeScript", "TailwindCSS", "Stripe",],
@@ -161,18 +161,19 @@ export const projectsData: Project[] = [
   },
   {
     "id": "2",
-    "name": "React",
-    "description": "A full-stack social media app",
+    "name": "React.js",
+    "description": "A full-stack Social Media App",
     "url": "https://swipe.vkampah-app.com/",
     "techStack": ["React", "Typescript", "Node.js", "Tailwind CSS", "Tanstack (React-query)"],
     "techStacktwo": [ "Appwrite Cloud (Back-end)", "AWS Amplify (hosting)", "Zod", "Shadcn", "Git", "Github"],
     "features": ["Authentication with Appwrite Auth API", "Post (CRUD): creating, viewing, exploring, saving, and liking/unliking posts", "Ensured full mobile responsiveness with Tailwind CSS"],
     "challenges": ["Overcame challenges, including using Tanstack Queries for auto-caching and mutations, setting up user authentications for the sign-up page, and managing TypeScript Interface declarations"]
   ,
-    "imageUrls": "/images/social1.jpg"},
+    // "imageUrls": "/images/social1.jpg"
+  },
   {
     "id": "3",
-    "name": "React Analytics",
+    "name": "React Analytics Dashboard",
     "description": "A static React Dashboard application", 
     "url": "https://reactanalytics.vkampah-app.com/",
     "techStack": ["React", "JavaScript", "Node.js", "Tailwind CSS"],
@@ -188,7 +189,7 @@ export const projectsData: Project[] = [
       "techStack": ["AWS lambda", "S3 buckets", "SNS", "SQS", "Dynamo DB"],
       "techStacktwo": [ "MySQL DB", "API Gateway"],
       "tasks": ["Set up IAM roles and policies for the different services", "Loaded data into S3 and configured SQS to trigger a lambda function to copy data into Dynamo DB", "Defined another lambda function to seamlessly apply transformations to data in Dynamo DB and copied output to a MySQL DB", "Defined a lambda function to compute basic data aggregations and integrated with an API gateway to expose an endpoint to retrieve aggregated data", "Configured SNS topics to send notifications upon completion of different pipeline steps, including copy activities, loading, and aggregations in order to proactively track and monitor pipeline activities"],
-      "imageUrls": "/images/dash1.jpg"
+      // "imageUrls": "/images/dash1.jpg"
   },
   {
     "id": "5",
@@ -198,7 +199,8 @@ export const projectsData: Project[] = [
     "techStacktwo": ["Azure SQL Server", "Azure Databricks"],
     "tasks": ["Loaded data to Azure Data Lake Storage (ADLS) using Azure Storage Explorer", "Mounted ADLS on Databricks and created Spark Notebooks to handle data processing logics", "Connected Databricks Notebooks to Data Factory pipeline and scheduled pipeline jobs to load data into Azure SQL Database"]
   ,
-    "imageUrls": "/images/dash1.jpg"},
+    // "imageUrls": "/images/dash1.jpg"
+  },
   {
     "id": "6",
     "name": "ETL_Airflow",
@@ -215,7 +217,8 @@ export const projectsData: Project[] = [
     "techStack": ["Python", "Bash"],
     "features": ["Streamlined processes through automation, including log analysis and reporting, file renaming, email domain replacement, and unit testing"]
   ,
-    "imageUrls": "/images/pythonProj.png"},
+    // "imageUrls": "/images/pythonProj.png"
+  },
 ]
 
 

@@ -25,7 +25,7 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
+  // DrawerDescription,
   // DrawerDescription,
   DrawerFooter,
   DrawerHeader,
@@ -142,7 +142,9 @@ const Home = () => {
                   <div className=" item-start p-1 mb-4">
                     {/* {item.category.split(/\s+/)[0]} <br />
                     {item.category.split(/\s+/)[1]} */}
-                    <h1 className="mb-4 text-2xl">{item.category}</h1>
+                    <h1 className="mb-4 text-2xl items-start">
+                      {item.category}
+                    </h1>
                     <div className="flex flex-row">
                       <div className="flex flex-col gap-2 mr-2">
                         {item.items.map((skill, index) => (
@@ -178,14 +180,14 @@ const Home = () => {
       <div className="shadow-md">
         <div className=" flex flex-col justify-center items-center p-10">
           <h1 className=" text-2xl md:text-3xl font-bold mb-4">PROJECTS</h1>
-          <div>
+          <div className="flex justify-center items-center h-full">
             {projectsData.map((project, index) => (
               <Drawer key={index}>
                 <DrawerTrigger className="m-1 hover:border-blue-500 border-2 rounded-md p-2 text-2xl hover:bg-blue-500 hover:text-white">
                   <Button variant="outline">{project.name}</Button>
                 </DrawerTrigger>
 
-                <DrawerContent className="flex justify-center items-center border-2 overflow-auto w-full p-4">
+                <DrawerContent className="flex justify-center items-center border-2 h-full overflow-y-scroll w-full py-40 px-20">
                   <div className="flex flex-col items-center h-full w-full">
                     {!project.imageUrls && (
                       <div className="mb-4">
@@ -193,15 +195,15 @@ const Home = () => {
                           <DrawerTitle className="text-3xl font-bold">
                             {project.name}
                           </DrawerTitle>
-                          <DrawerDescription className="text-lg">
-                            {project.name}
-                          </DrawerDescription>
+                          {/* <DrawerDescription className="text-lg">
+                            {project.description}
+                          </DrawerDescription> */}
                         </DrawerHeader>
                       </div>
                     )}
 
-                    <div className="flex flex-col items-center rounded-md shadow-md p-4  h-full">
-                      {project.imageUrls && (
+                    <div className="flex flex-col items-center rounded-md shadow-md p-4">
+                      {/* {project.imageUrls && (
                         <>
                           <div className=" p-2 rounded-md">
                             <img
@@ -210,17 +212,51 @@ const Home = () => {
                             />
                           </div>
                         </>
-                      )}
+                      )} */}
                       <div className="flex flex-col space-y-4 h-full">
                         <div className="font-semibold flex flex-col items-start">
                           <p>Description: {project.description}</p>
-                          <p className="font-bold mb-1">Features:</p>
+
                           <div className="flex flex-col items-start justify-start p-2 text-sm">
-                            {project.features?.map(
-                              (feature: string, index: number) => (
-                                <li key={index}>- {feature}</li>
-                              )
-                            )}
+                            <article className="text-wrap">
+                              {project.features ? (
+                                <h3 className="font-bold mb-1">Features:</h3>
+                              ) : (
+                                <h3 className="font-bold mb-1">Tasks:</h3>
+                              )}
+
+                              {project.features
+                                ? project.features?.map(
+                                    (feature: string, index: number) => (
+                                      <>
+                                        <p
+                                          key={index}
+                                          className="text-wrap"
+                                          // dangerouslySetInnerHTML={{
+                                          //   __html: feature,
+                                          // }}
+                                        >
+                                          - {feature}
+                                        </p>
+                                      </>
+                                    )
+                                  )
+                                : project.tasks?.map(
+                                    (task: string, index: number) => (
+                                      <>
+                                        <p
+                                          key={index}
+                                          className="text-wrap"
+                                          // dangerouslySetInnerHTML={{
+                                          //   __html: task,
+                                          // }}
+                                        >
+                                          - {task}
+                                        </p>
+                                      </>
+                                    )
+                                  )}
+                            </article>
                           </div>
                         </div>
                         <div className="font-semibold">
@@ -237,7 +273,7 @@ const Home = () => {
                             target="_blank"
                             className="text-blue-500 hover:underline font-bold"
                           >
-                            click here to view project
+                            Click here to view project
                           </a>
                         </div>
                       </div>
