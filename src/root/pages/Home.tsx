@@ -126,7 +126,7 @@ const Home = () => {
           Skills
         </h1>
         <br />
-        <div className="flex flex-col justify-center items-start md:flex-wrap sm:flex-wrap p-1 rounded-xl mx-4 md:mx-40">
+        <div className="flex justify-center items-start md:flex-nowrap flex-wrap p-1 rounded-xl mx-4 md:mx-40">
           <Carousel
             opts={{
               align: "start",
@@ -137,7 +137,7 @@ const Home = () => {
               {skillsData.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="flex flex-col justify-center items-center border-2 bg-black text-white w-25 md:w-full"
+                  className="flex justify-center bg-slate-900 items-center border text-white md:w-full"
                 >
                   <div className=" item-start p-1 mb-4">
                     {/* {item.category.split(/\s+/)[0]} <br />
@@ -145,7 +145,7 @@ const Home = () => {
                     <h1 className="mb-4 text-2xl items-start">
                       {item.category}
                     </h1>
-                    <div className="flex flex-row">
+                    <div className="flex flex-row justify-center items-center">
                       <div className="flex flex-col gap-2 mr-2">
                         {item.items.map((skill, index) => (
                           <div key={index} className="flex">
@@ -180,13 +180,14 @@ const Home = () => {
       <div className="shadow-md">
         <div className=" flex flex-col justify-center items-center p-10">
           <h1 className=" text-2xl md:text-3xl font-bold mb-4">PROJECTS</h1>
-          <div className="flex justify-center items-center h-full">
+          <div className="justify-center items-center h-full">
             {projectsData.map((project, index) => (
               <Drawer key={index}>
-                <DrawerTrigger className="m-1 hover:border-blue-500 border-2 rounded-md p-2 text-2xl hover:bg-blue-500 hover:text-white">
-                  <Button variant="outline">{project.name}</Button>
-                </DrawerTrigger>
-
+                
+                  <DrawerTrigger className="justify-center items-center m-1 hover:border-blue-500 border-2 rounded-md p-2 text-2xl hover:bg-blue-500 hover:text-white">
+                    <Button variant="outline">{project.name}</Button>
+                  </DrawerTrigger>
+         
                 <DrawerContent className="flex justify-center items-center border-2 h-full overflow-y-scroll w-full py-40 px-20">
                   <div className="flex flex-col items-center h-full w-full">
                     {!project.imageUrls && (
