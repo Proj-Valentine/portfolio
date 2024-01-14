@@ -127,7 +127,12 @@ const Home = () => {
         </h1>
         <br />
         <div className="flex flex-col justify-center items-start md:flex-wrap sm:flex-wrap p-1 rounded-xl mx-4 md:mx-40">
-          <Carousel>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
             <CarouselContent>
               {skillsData.map((item, index) => (
                 <CarouselItem
