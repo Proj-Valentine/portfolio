@@ -264,8 +264,8 @@ const Home = () => {
                           <p className="font-bold mb-1">Tech Stack:</p>
                           <div className="text-sm flex flex-col">
                             <p>{project.techStack?.join(" | ")}</p>
-                            {" | "}
-                            <>{project.techStacktwo?.join(" | ")}</>
+                            
+                            <>{ project.techStacktwo? (`${project.techStacktwo?.join(" | ")}`): null}</>
                           </div>
                         </div>
                         <div className="font-semibold">

@@ -84,7 +84,7 @@ type ProfileContent = {
 
 export const profileData: ProfileContent = {
   paragraphs: [
-"I am Valentine Kwame Ampah, a dedicated professional with extensive </br> experience in data infrastructure and business strategy.<br /> Specializing in software development, data engineering, and automation. </br> I excel in team environments and committed to data-driven excellence for growth and productivity."  ],
+"I am Valentine Kwame Ampah, a dedicated professional with extensive experience in </br> data infrastructure and business strategy.<br /> Specializing in software development, data engineering, and automation. </br> I excel in team environments and committed to data-driven excellence for growth and productivity."  ],
 };
 
 type Certificates = {

@@ -15,7 +15,7 @@ const Navbar = () => {
 
       <div className="flex flex-col rounded-full justify-center items-center p-1 m-1 brightness-90">
         <h1 className="font-bold text-4xl"> Valentine Ampah</h1>
-        <p> Software Developer</p>
+        <p> Software Developer | Data Engineer | Data Analyst| Cloud Developer</p>
       
         {/* <ModeToggle /> */}
       </div>

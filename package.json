@@ -45,6 +45,7 @@
     "react-router-dom": "^6.19.0",
     "react-social-icons": "^6.6.0",
     "tailwind-merge": "^2.0.0",
+    "validator": "^13.11.0",
     "vaul": "^0.8.0",
     "zod": "^3.22.4"
   },
