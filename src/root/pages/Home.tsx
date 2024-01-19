@@ -188,106 +188,106 @@ const Home = () => {
                     <Button variant="outline">{project.name}</Button>
                   </DrawerTrigger>
          
-                <DrawerContent className="flex justify-center items-center border-2 h-full overflow-y-scroll w-full py-40 px-20">
-                  <div className="flex flex-col items-center h-full w-full">
-                    {!project.imageUrls && (
-                      <div className="mb-4">
-                        <DrawerHeader>
-                          <DrawerTitle className="text-3xl font-bold">
-                            {project.name}
-                          </DrawerTitle>
-                          {/* <DrawerDescription className="text-lg">
-                            {project.description}
-                          </DrawerDescription> */}
-                        </DrawerHeader>
-                      </div>
-                    )}
+                  <DrawerContent className="flex justify-center items-center border-2 h-full overflow-auto w-full px-20">
+                    <div className="flex flex-col items-center h-full w-full">
+                      {!project.imageUrls && (
+                        <div className="mb-4">
+                          <DrawerHeader>
+                            <DrawerTitle className="text-3xl font-bold">
+                              {project.name}
+                            </DrawerTitle>
+                            {/* <DrawerDescription className="text-lg">
+                              {project.description}
+                            </DrawerDescription> */}
+                          </DrawerHeader>
+                        </div>
+                      )}
 
-                    <div className="flex flex-col items-center rounded-md shadow-md p-4">
-                      {/* {project.imageUrls && (
-                        <>
-                          <div className=" p-2 rounded-md">
-                            <img
-                              src={`${project.imageUrls}`}
-                              className="aspect-square rounded-md max-h-50 w-80"
-                            />
-                          </div>
-                        </>
-                      )} */}
-                      <div className="flex flex-col space-y-4 h-full">
-                        <div className="font-semibold flex flex-col items-start">
-                          <p>Description: {project.description}</p>
+                      <div className="flex flex-col items-center rounded-md shadow-md p-4">
+                        {/* {project.imageUrls && (
+                          <>
+                            <div className=" p-2 rounded-md">
+                              <img
+                                src={`${project.imageUrls}`}
+                                className="aspect-square rounded-md max-h-50 w-80"
+                              />
+                            </div>
+                          </>
+                        )} */}
+                        <div className="flex flex-col space-y-4 h-full">
+                          <div className="font-semibold flex flex-col items-start">
+                            <p>Description: {project.description}</p>
 
-                          <div className="flex flex-col items-start justify-start p-2 text-sm">
-                            <article className="text-wrap">
-                              {project.features ? (
-                                <h3 className="font-bold mb-1">Features:</h3>
-                              ) : (
-                                <h3 className="font-bold mb-1">Tasks:</h3>
-                              )}
+                            <div className="flex flex-col items-start justify-start p-2 text-sm">
+                              <article className="text-wrap">
+                                {project.features ? (
+                                  <h3 className="font-bold mb-1">Features:</h3>
+                                ) : (
+                                  <h3 className="font-bold mb-1">Tasks:</h3>
+                                )}
 
-                              {project.features
-                                ? project.features?.map(
-                                    (feature: string, index: number) => (
-                                      <>
-                                        <p
-                                          key={index}
-                                          className="text-wrap"
-                                          // dangerouslySetInnerHTML={{
-                                          //   __html: feature,
-                                          // }}
-                                        >
-                                          - {feature}
-                                        </p>
-                                      </>
+                                {project.features
+                                  ? project.features?.map(
+                                      (feature: string, index: number) => (
+                                        <>
+                                          <p
+                                            key={index}
+                                            className="text-wrap"
+                                            // dangerouslySetInnerHTML={{
+                                            //   __html: feature,
+                                            // }}
+                                          >
+                                            - {feature}
+                                          </p>
+                                        </>
+                                      )
                                     )
-                                  )
-                                : project.tasks?.map(
-                                    (task: string, index: number) => (
-                                      <>
-                                        <p
-                                          key={index}
-                                          className="text-wrap"
-                                          // dangerouslySetInnerHTML={{
-                                          //   __html: task,
-                                          // }}
-                                        >
-                                          - {task}
-                                        </p>
-                                      </>
-                                    )
-                                  )}
-                            </article>
+                                  : project.tasks?.map(
+                                      (task: string, index: number) => (
+                                        <>
+                                          <p
+                                            key={index}
+                                            className="text-wrap"
+                                            // dangerouslySetInnerHTML={{
+                                            //   __html: task,
+                                            // }}
+                                          >
+                                            - {task}
+                                          </p>
+                                        </>
+                                      )
+                                    )}
+                              </article>
+                            </div>
+                          </div>
+                          <div className="font-semibold">
+                            <p className="font-bold mb-1">Tech Stack:</p>
+                            <div className="text-sm flex flex-col">
+                              <p>{project.techStack?.join(" | ")}</p>
+                              
+                              <>{ project.techStacktwo? (`${project.techStacktwo?.join(" | ")}`): null}</>
+                            </div>
+                          </div>
+                          <div className="font-semibold">
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              className="text-blue-500 hover:underline font-bold"
+                            >
+                              Click here to view project
+                            </a>
                           </div>
                         </div>
-                        <div className="font-semibold">
-                          <p className="font-bold mb-1">Tech Stack:</p>
-                          <div className="text-sm flex flex-col">
-                            <p>{project.techStack?.join(" | ")}</p>
-                            
-                            <>{ project.techStacktwo? (`${project.techStacktwo?.join(" | ")}`): null}</>
-                          </div>
-                        </div>
-                        <div className="font-semibold">
-                          <a
-                            href={project.url}
-                            target="_blank"
-                            className="text-blue-500 hover:underline font-bold"
-                          >
-                            Click here to view project
-                          </a>
-                        </div>
+                        <DrawerFooter>
+                          <DrawerClose>
+                            <Button variant="outline" className="">
+                              Close
+                            </Button>
+                          </DrawerClose>
+                        </DrawerFooter>
                       </div>
-                      <DrawerFooter>
-                        <DrawerClose>
-                          <Button variant="outline" className="">
-                            Close
-                          </Button>
-                        </DrawerClose>
-                      </DrawerFooter>
                     </div>
-                  </div>
-                </DrawerContent>
+                  </DrawerContent>
               </Drawer>
             ))}
           </div>
