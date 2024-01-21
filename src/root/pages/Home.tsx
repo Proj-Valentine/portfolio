@@ -142,7 +142,7 @@ const Home = () => {
               {skillsData.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="flex justify-center items-center border text-white w-full md:w-full bg-slate-700"
+                  className="flex justify-center items-center border-y-2 text-white w-full md:w-full bg-slate-700"
                 >
                   <div className=" item-start p-1 mb-4">
                     {/* {item.category.split(/\s+/)[0]} <br />
