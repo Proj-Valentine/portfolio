@@ -86,6 +86,7 @@ export default {
         'wallp-2': "url('/images/wall2.jpg')",
         'bg2':"url('/images/great.jpg')",
         'bg3':"url('/images/profile1.jpg')",
+        'bg4':"url('/images/profile3.jpg')",
       }
     },
   },

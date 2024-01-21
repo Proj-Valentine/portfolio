@@ -58,15 +58,19 @@ const Home = () => {
       <div className="w-full z-50 relative">
         <Navbar />
       </div>
-      <div className="flex items-center flex-col w-full mb-4 bg-bg3 px-20">
-        <div className="flex flex-col  justify-center mb-20 text-center text-3xl w-full h-5/6 mx-8 p-20 mt-2 ">
+      <div className="flex items-center flex-col w-full mb-4 bg-bg4 px-20">
+        <div className="flex flex-col justify-center mb-20 text-center text-3xl w-full h-44 mx-8 p-20 mt-2 ">
           <br />
           {/* <Card>
-            <CardContent className=" w-40 md:w-full h-40 md:h-80">
-              <img
-                src={"/images/profile1.jpg"}
-                className="h-40 w-40 md:w-full rounded-md"
-              ></img>
+            <CardContent className="w-44 md:w-full text-slate-900 text-sm">
+              <CardContent>
+                {profileData.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  ></p>
+                ))}
+              </CardContent>
             </CardContent>
           </Card> */}
         </div>
@@ -78,7 +82,7 @@ const Home = () => {
         <div className="flex flex-col xs:w-auto md:basis-2/3 xs:basis-1/2 m-2 justify-center items-center rounded-3xl w-full">
           <div className="md:p-1 shadow-md rounded-3xl w-full">
             <div className="flex flex-col md:flex-row justify-between md:grid-cols-2">
-              <section className="hidden md:flex brightness-125 p-2 m-1 max-w-md">
+              <section className="brightness-125 p-2 m-1 max-w-md">
                 <Card>
                   <CardHeader>
                     <CardTitle className=" text-2xl md:text-3xl font-bold">
@@ -96,7 +100,7 @@ const Home = () => {
                 </Card>
               </section>
 
-              <section className="brightness-125 p-2 m-4 rounded-xl max-w-md">
+              <section className="hidden md:flex brightness-125 p-2 m-4 rounded-xl max-w-md">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-2xl md:text-3xl font-bold">
@@ -126,18 +130,19 @@ const Home = () => {
           Skills
         </h1>
         <br />
-        <div className="flex justify-center items-start md:flex-nowrap flex-wrap p-1 rounded-xl mx-4 md:mx-40">
+        <div className="flex justify-center items-start md:flex-nowrap flex-nowrap p-1 rounded-xl mx-4 md:mx-40">
           <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
+            // opts={{
+            //   align: "start",
+            //   loop: true,
+            // }}
+            orientation="horizontal"
           >
             <CarouselContent>
               {skillsData.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="flex justify-center bg-slate-900 items-center border text-white md:w-full"
+                  className="flex justify-center items-center border text-white w-full md:w-full bg-slate-700"
                 >
                   <div className=" item-start p-1 mb-4">
                     {/* {item.category.split(/\s+/)[0]} <br />
@@ -183,28 +188,27 @@ const Home = () => {
           <div className="justify-center items-center h-full">
             {projectsData.map((project, index) => (
               <Drawer key={index}>
-                
-                  <DrawerTrigger className="justify-center items-center m-1 hover:border-blue-500 border-2 rounded-md p-2 text-2xl hover:bg-blue-500 hover:text-white">
-                    <Button variant="outline">{project.name}</Button>
-                  </DrawerTrigger>
-         
-                  <DrawerContent className="flex justify-center items-center border-2 h-full overflow-auto w-full px-20">
-                    <div className="flex flex-col items-center h-full w-full">
-                      {!project.imageUrls && (
-                        <div className="mb-4">
-                          <DrawerHeader>
-                            <DrawerTitle className="text-3xl font-bold">
-                              {project.name}
-                            </DrawerTitle>
-                            {/* <DrawerDescription className="text-lg">
+                <DrawerTrigger className="justify-center items-center m-1 hover:border-blue-500 border-2 rounded-md p-2 text-2xl hover:bg-blue-500 hover:text-white">
+                  <Button variant="outline">{project.name}</Button>
+                </DrawerTrigger>
+
+                <DrawerContent className="flex justify-center items-center border-2 h-full overflow-auto w-full px-20">
+                  <div className="flex flex-col items-center h-full w-full">
+                    {!project.imageUrls && (
+                      <div className="mb-4">
+                        <DrawerHeader>
+                          <DrawerTitle className="text-3xl font-bold">
+                            {project.name}
+                          </DrawerTitle>
+                          {/* <DrawerDescription className="text-lg">
                               {project.description}
                             </DrawerDescription> */}
-                          </DrawerHeader>
-                        </div>
-                      )}
+                        </DrawerHeader>
+                      </div>
+                    )}
 
-                      <div className="flex flex-col items-center rounded-md shadow-md p-4">
-                        {/* {project.imageUrls && (
+                    <div className="flex flex-col items-center rounded-md shadow-md p-4">
+                      {/* {project.imageUrls && (
                           <>
                             <div className=" p-2 rounded-md">
                               <img
@@ -214,61 +218,66 @@ const Home = () => {
                             </div>
                           </>
                         )} */}
-                        <div className="flex flex-col space-y-4 h-full">
-                          <div className="font-semibold flex flex-col items-start">
-                            <p>Description: {project.description}</p>
+                      <div className="flex flex-col space-y-4 h-full">
+                        <div className="font-semibold flex flex-col items-start">
+                          <p>Description: {project.description}</p>
 
-                            <div className="flex flex-col items-start justify-start p-2 text-sm">
-                              <article className="text-wrap">
-                                {project.features ? (
-                                  <h3 className="font-bold mb-1">Features:</h3>
-                                ) : (
-                                  <h3 className="font-bold mb-1">Tasks:</h3>
-                                )}
+                          <div className="flex flex-col items-start justify-start p-2 text-sm">
+                            <article className="text-wrap">
+                              {project.features ? (
+                                <h3 className="font-bold mb-1">Features:</h3>
+                              ) : (
+                                <h3 className="font-bold mb-1">Tasks:</h3>
+                              )}
 
-                                {project.features
-                                  ? project.features?.map(
-                                      (feature: string, index: number) => (
-                                        <>
-                                          <p
-                                            key={index}
-                                            className="text-wrap"
-                                            // dangerouslySetInnerHTML={{
-                                            //   __html: feature,
-                                            // }}
-                                          >
-                                            - {feature}
-                                          </p>
-                                        </>
-                                      )
+                              {project.features
+                                ? project.features?.map(
+                                    (feature: string, index: number) => (
+                                      <>
+                                        <p
+                                          key={index}
+                                          className="text-wrap"
+                                          // dangerouslySetInnerHTML={{
+                                          //   __html: feature,
+                                          // }}
+                                        >
+                                          - {feature}
+                                        </p>
+                                      </>
                                     )
-                                  : project.tasks?.map(
-                                      (task: string, index: number) => (
-                                        <>
-                                          <p
-                                            key={index}
-                                            className="text-wrap"
-                                            // dangerouslySetInnerHTML={{
-                                            //   __html: task,
-                                            // }}
-                                          >
-                                            - {task}
-                                          </p>
-                                        </>
-                                      )
-                                    )}
-                              </article>
-                            </div>
+                                  )
+                                : project.tasks?.map(
+                                    (task: string, index: number) => (
+                                      <>
+                                        <p
+                                          key={index}
+                                          className="text-wrap"
+                                          // dangerouslySetInnerHTML={{
+                                          //   __html: task,
+                                          // }}
+                                        >
+                                          - {task}
+                                        </p>
+                                      </>
+                                    )
+                                  )}
+                            </article>
                           </div>
-                          <div className="font-semibold">
-                            <p className="font-bold mb-1">Tech Stack:</p>
-                            <div className="text-sm flex flex-col">
-                              <p>{project.techStack?.join(" | ")}</p>
-                              
-                              <>{ project.techStacktwo? (`${project.techStacktwo?.join(" | ")}`): null}</>
-                            </div>
+                        </div>
+                        <div className="font-semibold">
+                          <p className="font-bold mb-1">Tech Stack:</p>
+                          <div className="text-sm flex flex-col">
+                            <p>{project.techStack?.join(" | ")}</p>
+
+                            <>
+                              {project.techStacktwo
+                                ? `${project.techStacktwo?.join(" | ")}`
+                                : null}
+                            </>
                           </div>
-                          <div className="font-semibold">
+                        </div>
+                        <div className="font-semibold">
+                          {project.url ? (
                             <a
                               href={project.url}
                               target="_blank"
@@ -276,18 +285,19 @@ const Home = () => {
                             >
                               Click here to view project
                             </a>
-                          </div>
+                          ) : null}
                         </div>
-                        <DrawerFooter>
-                          <DrawerClose>
-                            <Button variant="outline" className="">
-                              Close
-                            </Button>
-                          </DrawerClose>
-                        </DrawerFooter>
                       </div>
+                      <DrawerFooter>
+                        <DrawerClose>
+                          <Button variant="outline" className="">
+                            Close
+                          </Button>
+                        </DrawerClose>
+                      </DrawerFooter>
                     </div>
-                  </DrawerContent>
+                  </div>
+                </DrawerContent>
               </Drawer>
             ))}
           </div>
@@ -349,7 +359,9 @@ const Home = () => {
               label="LindedIn"
               network="linkedin"
               url="https://www.linkedin.com/in/valentine-ampah-b92a0198"
+              bgColor="#1E293B"
               target="_blank"
+              className="border-2 border-slate-200 rounded-full"
             />
             &nbsp;
           </p>
