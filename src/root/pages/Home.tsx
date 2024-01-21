@@ -277,6 +277,17 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="font-semibold">
+                          {project.src_code ? (
+                            <a
+                              href={project.src_code}
+                              target="_blank"
+                              className="text-blue-500 hover:underline font-bold"
+                            >
+                              Source Code
+                            </a>
+                          ) : null}
+                        </div>
+                        <div className="font-semibold">
                           {project.url ? (
                             <a
                               href={project.url}

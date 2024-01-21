@@ -147,6 +147,7 @@ interface Project {
   imageUrls?: string;
   description?: string;
   techStacktwo?: string[];
+  src_code?: string;
 }
 
 export const projectsData: Project[] = [
@@ -155,6 +156,7 @@ export const projectsData: Project[] = [
     "name": "Next.js 14",
     "description": "A full-stack MERN event hosting application",
     "url": "https://streamfy.vercel.app/",
+    "src_code": "https://github.com/Proj-Valentine/event_platform",
     "techStack": ["Node.js & Next.js 14", "TypeScript", "TailwindCSS", "Stripe",],
     "techStacktwo": ["Zod & React Hook Form", "Uploadthing", "Clerk", "Shadcn", "MongoDB", "Vercel & Github"],
     "features": ["Authentication (CRUD) with Clerk", "Events (CRUD): Create, Read, Update, Delete Events", "Search & Filter", "Secure Checkout and Pay with Stripe", "Event Orders: Comprehensive order management system, providing a clear overview of all event-related transactions."]
@@ -164,6 +166,7 @@ export const projectsData: Project[] = [
     "name": "React.js",
     "description": "A full-stack Social Media App",
     "url": "https://swipe.vkampah-app.com/",
+    "src_code": "https://github.com/Proj-Valentine/mymobileapp",
     "techStack": ["React", "Typescript", "Node.js", "Tailwind CSS", "Tanstack (React-query)"],
     "techStacktwo": [ "Appwrite Cloud (Back-end)", "AWS Amplify (hosting)", "Zod", "Shadcn", "Git", "Github"],
     "features": ["Authentication with Appwrite Auth API", "Post (CRUD): creating, viewing, exploring, saving, and liking/unliking posts", "Ensured full mobile responsiveness with Tailwind CSS"],
@@ -171,15 +174,27 @@ export const projectsData: Project[] = [
   ,
     // "imageUrls": "/images/social1.jpg"
   },
+
   {
     "id": "3",
     "name": "React Analytics Dashboard",
     "description": "A static React Dashboard application", 
     "url": "https://reactanalytics.vkampah-app.com/",
+    "src_code": "https://github.com/Proj-Valentine/mydashboard",
     "techStack": ["React", "JavaScript", "Node.js", "Tailwind CSS"],
     "techStacktwo": ["Sync Fusion Components", "AWS Amplify", "Git", "Github"],
     "features": ["Developed a comprehensive dashboard application for reporting various Key Performance Indicators (KPIs)", "Implemented features such as Dark and Light Mode Toggle, Theme-settings, Dashboard, Kanban Board, Text Editor, and Paginations"],
     "challenges": ["Overcame challenges in effectively utilizing Tailwind CSS classes"]
+  },
+    {
+    "id": "3",
+    "name": "Online Store",
+    "description": "An online store application (Collaborative School Project)", 
+    "url": "https://main.d2zkxheui2vt8a.amplifyapp.com/",
+    "src_code": "https://github.com/Proj-Valentine/onlinestore",
+    "techStack": ["React", "JavaScript", "Node.js", "Tailwind CSS"],
+    "techStacktwo": ["AWS Amplify", "Github"],
+    "features": ["Developed a comprehensive dashboard application for reporting various Key Performance Indicators (KPIs)", "Implemented features such as Dark and Light Mode Toggle, Theme-settings, Dashboard, Kanban Board, Text Editor, and Paginations"],
   },
     {
       "id": "4",
