@@ -192,9 +192,9 @@ export const projectsData: Project[] = [
     "description": "An online store application (Collaborative School Project)", 
     "url": "https://main.d2zkxheui2vt8a.amplifyapp.com/",
     "src_code": "https://github.com/Proj-Valentine/onlinestore",
-    "techStack": ["React", "JavaScript", "Node.js", "Tailwind CSS"],
+    "techStack": ["React", "JavaScript", "Node.js", "Tailwind CSS",],
     "techStacktwo": ["AWS Amplify", "Github"],
-    "features": ["Developed a comprehensive dashboard application for reporting various Key Performance Indicators (KPIs)", "Implemented features such as Dark and Light Mode Toggle, Theme-settings, Dashboard, Kanban Board, Text Editor, and Paginations"],
+    "features": ["Developed a comprehensive online clothing store application", "Implemented cart context to handle cart, cart items, and cart actions","Products and product details page","Poduct background theme setting" ],
   },
     {
       "id": "4",
