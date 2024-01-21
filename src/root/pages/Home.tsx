@@ -188,9 +188,11 @@ const Home = () => {
           <div className="justify-center items-center h-full">
             {projectsData.map((project, index) => (
               <Drawer key={index}>
-                <DrawerTrigger className="justify-center items-center m-1 hover:border-blue-500 border-2 rounded-md p-2 text-2xl hover:bg-blue-500 hover:text-white">
-                  <Button variant="outline">{project.name}</Button>
-                </DrawerTrigger>
+                <div className='flex flex-col'>
+                  <DrawerTrigger className="justify-center items-center m-1 hover:border-blue-500 border-2 rounded-md p-2 text-2xl hover:bg-blue-500 hover:text-white">
+                    <Button variant="outline">{project.name}</Button>
+                  </DrawerTrigger>
+                </div>
 
                 <DrawerContent className="flex justify-center items-center border-2 h-full overflow-auto w-full px-10 md:px-20">
                   <div className="flex flex-col items-center h-full w-full">

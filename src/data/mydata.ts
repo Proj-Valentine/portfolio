@@ -153,7 +153,7 @@ interface Project {
 export const projectsData: Project[] = [
   {
     "id": "1",
-    "name": "Next.js 14",
+    "name": "Event hosting (Next.js 14)",
     "description": "A full-stack MERN event hosting application",
     "url": "https://streamfy.vercel.app/",
     "src_code": "https://github.com/Proj-Valentine/event_platform",
@@ -163,7 +163,7 @@ export const projectsData: Project[] = [
   },
   {
     "id": "2",
-    "name": "React.js",
+    "name": "Social App (React.js)",
     "description": "A full-stack Social Media App",
     "url": "https://swipe.vkampah-app.com/",
     "src_code": "https://github.com/Proj-Valentine/mymobileapp",
@@ -177,7 +177,7 @@ export const projectsData: Project[] = [
 
   {
     "id": "3",
-    "name": "React Analytics Dashboard",
+    "name": "Analytics Dashboard (React.js)",
     "description": "A static React Dashboard application", 
     "url": "https://reactanalytics.vkampah-app.com/",
     "src_code": "https://github.com/Proj-Valentine/mydashboard",
@@ -188,7 +188,7 @@ export const projectsData: Project[] = [
   },
     {
     "id": "3",
-    "name": "Online Store",
+    "name": "Online Store (React.js)",
     "description": "An online store application (Collaborative School Project)", 
     "url": "https://main.d2zkxheui2vt8a.amplifyapp.com/",
     "src_code": "https://github.com/Proj-Valentine/onlinestore",
