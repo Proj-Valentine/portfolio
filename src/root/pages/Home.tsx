@@ -192,10 +192,10 @@ const Home = () => {
                   <Button variant="outline">{project.name}</Button>
                 </DrawerTrigger>
 
-                <DrawerContent className="flex justify-center items-center border-2 h-full overflow-auto w-full px-20">
+                <DrawerContent className="flex justify-center items-center border-2 h-full overflow-auto w-full px-10 md:px-20">
                   <div className="flex flex-col items-center h-full w-full">
                     {!project.imageUrls && (
-                      <div className="mb-4">
+                      <div className="">
                         <DrawerHeader>
                           <DrawerTitle className="text-3xl font-bold">
                             {project.name}
